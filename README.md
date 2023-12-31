@@ -1,4 +1,4 @@
-- Created two Django models viz. Invoice and Invoice Detail.
+- Created two Django models viz. Invoice and Invoice Detail. (https://github.com/prashik0/Invoice-Project/blob/main/core/invoice/models.py)
 - Invoice model fields -> Date, Invoice CustomerName.
 - InvoiceDetail model fields -> invoice (ForeignKey), description, quantity, unit_price, price.
 - Create APIs using Django Rest Framework for all the HTTP methods for the invoice models. 
