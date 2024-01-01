@@ -22,7 +22,6 @@ from invoice.views import InvoiceViewSet, InvoiceDetailViewSet
 
 router = DefaultRouter()
 router.register("invoices", InvoiceViewSet)
-router.register("invoice_details", InvoiceDetailViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
