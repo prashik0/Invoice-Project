@@ -45,6 +45,3 @@ This project implements a Django application for managing invoices and their det
 - **Delete Invoice**
   ```json
   DELETE /invoices/<int:pk>/ 
-  
-
-
