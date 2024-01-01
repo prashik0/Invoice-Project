@@ -61,7 +61,7 @@ This project implements a Django application for managing invoices and their det
 
 - **API Payload**:
   - The API accepts invoice details in the payload and creates/updates the associated invoice details accordingly.
-  - ```json
+  ```json
    
        {
            "date": "2023-12-20",
@@ -76,7 +76,7 @@ This project implements a Django application for managing invoices and their det
            ]
        }
    
-   ```
+  ```
 - **Tests**: Test cases have been created to ensure the functionality of all API endpoints. The test code can be found in [tests.py](https://github.com/prashik0/Invoice-Project/blob/main/core/invoice/tests.py).
 
 ### Test Cases:
