@@ -77,7 +77,6 @@ This project implements a Django application for managing invoices and their det
        }
    
    ```
-
 - **Tests**: Test cases have been created to ensure the functionality of all API endpoints. The test code can be found in [tests.py](https://github.com/prashik0/Invoice-Project/blob/main/core/invoice/tests.py).
 
 ### Test Cases:
