@@ -9,7 +9,7 @@ class InvoiceDetailSerializer(serializers.ModelSerializer):
 
 
 class InvoiceSerializer(serializers.ModelSerializer):
-    details = InvoiceDetailSerializer(many=True)
+    details = InvoiceDetailSerializer(many=True, required=False)
     class Meta:
         model = Invoice
         fields = ["id", "date", "customer_name", "details"]
@@ -32,7 +32,7 @@ class InvoiceSerializer(serializers.ModelSerializer):
 
         if existing_details := instance.details.all():
             self.update_details(existing_details, details_data)
-        else:
+        elif details_data:
             InvoiceDetail.objects.create(invoice=instance, **details_data[0])
 
         return instance
