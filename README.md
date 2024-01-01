@@ -34,7 +34,7 @@ This project implements a Django application for managing invoices and their det
 ## API Examples
 
 - **Create Invoice**
-  ```json``
+  ```json
   POST /invoices/
 - **Get Invoices**
   ```json
