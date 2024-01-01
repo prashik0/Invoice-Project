@@ -1,7 +1,7 @@
 Project Details
 Created a single url /invoices/
 
-/invoices/
+/invoices/ <br>
 /invoices/<int:pk>/
 
 - Created two Django models as per details provided viz. Invoice and InvoiceDetail. ([models.py](https://github.com/prashik0/Invoice-Project/blob/main/core/invoice/models.py))
