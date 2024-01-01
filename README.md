@@ -61,7 +61,22 @@ This project implements a Django application for managing invoices and their det
 
 - **API Payload**:
   - The API accepts invoice details in the payload and creates/updates the associated invoice details accordingly.
-  - <img width="989" alt="image" src="https://github.com/prashik0/Invoice-Project/assets/88423828/b70ea259-884b-4e12-bcec-a2cfd7b65f49">
+  - ```json
+   
+       {
+           "date": "2023-12-20",
+           "customer_name": "Prashik Raut",
+           "details": [
+               {
+                   "description": "Nam cras morbi amet vivamus aenean amet, praesent aliquet eu egestas lorem. Faucibus risus neque, rhoncus sed quis, est a luctus nam arcu suspendisse, integer pede fusce quam ultrices. Dolor amet. Ipsum vulputate commodo neque nam cras morbi.",
+                   "quantity": 78,
+                   "unit_price": "34.90",
+                   "price": "1234.87"
+               }
+           ]
+       }
+   
+   ```
 
 - **Tests**: Test cases have been created to ensure the functionality of all API endpoints. The test code can be found in [tests.py](https://github.com/prashik0/Invoice-Project/blob/main/core/invoice/tests.py).
 
