@@ -82,10 +82,6 @@ This project implements a Django application for managing invoices and their det
 ### Test Cases:
 
 1. **Without Date:**
-   - Request:
-     ```json
-     {}
-     ```
    - Response:
      ```json
      {
@@ -96,12 +92,6 @@ This project implements a Django application for managing invoices and their det
      ```
 
 2. **Invalid Date:**
-   - Request:
-     ```json
-     {
-       "date": "invalid-date"
-     }
-     ```
    - Response:
      ```json
      {
@@ -112,12 +102,6 @@ This project implements a Django application for managing invoices and their det
      ```
 
 3. **Without Customer Name:**
-   - Request:
-     ```json
-     {
-       "date": "2023-01-01"
-     }
-     ```
    - Response:
      ```json
      {
@@ -128,12 +112,6 @@ This project implements a Django application for managing invoices and their det
      ```
 
 4. **Remove "Date" or "Customer Name" Key:**
-   - Request:
-     ```json
-     {
-       "customer_name": "John Doe"
-     }
-     ```
    - Response:
      ```json
      {
@@ -144,13 +122,6 @@ This project implements a Django application for managing invoices and their det
      ```
 
 5. **Optional "Details" Field (Remove It):**
-   - Request:
-     ```json
-     {
-       "date": "2023-12-20",
-       "customer_name": "John Doe"
-     }
-     ```
    - Response:
      ```json
      {
@@ -162,14 +133,6 @@ This project implements a Django application for managing invoices and their det
      ```
 
 6. **Keep "Details" Key, No Data:**
-   - Request:
-     ```json
-     {
-       "date": "2023-12-20",
-       "customer_name": "John Doe",
-       "details": []
-     }
-     ```
    - Response:
      ```json
      {
@@ -181,19 +144,6 @@ This project implements a Django application for managing invoices and their det
      ```
 
 7. **Missing Key in "Details" (e.g., "Price"):**
-   - Request:
-     ```json
-     {
-       "date": "2023-12-20",
-       "customer_name": "John Doe",
-       "details": [
-         {
-           "quantity": 2,
-           "unit_price": 10.0
-         }
-       ]
-     }
-     ```
    - Response:
      ```json
      {
@@ -208,20 +158,6 @@ This project implements a Django application for managing invoices and their det
      ```
 
 8. **Invalid Unit Price in "Details":**
-   - Request:
-     ```json
-     {
-       "date": "2023-12-20",
-       "customer_name": "John Doe",
-       "details": [
-         {
-           "quantity": 2,
-           "unit_price": "11a.40",
-           "price": 22.0
-         }
-       ]
-     }
-     ```
    - Response:
      ```json
      {
