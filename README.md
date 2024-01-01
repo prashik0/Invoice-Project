@@ -65,6 +65,163 @@ This project implements a Django application for managing invoices and their det
 
 - **Tests**: Test cases have been created to ensure the functionality of all API endpoints. The test code can be found in [tests.py](https://github.com/prashik0/Invoice-Project/blob/main/core/invoice/tests.py).
 
+### Test Cases:
+
+1. **Without Date:**
+   - Request:
+     ```json
+     {}
+     ```
+   - Response:
+     ```json
+     {
+       "date": [
+         "Date has wrong format. Use one of these formats instead: YYYY-MM-DD."
+       ]
+     }
+     ```
+
+2. **Invalid Date:**
+   - Request:
+     ```json
+     {
+       "date": "invalid-date"
+     }
+     ```
+   - Response:
+     ```json
+     {
+       "date": [
+         "Date has wrong format. Use one of these formats instead: YYYY-MM-DD."
+       ]
+     }
+     ```
+
+3. **Without Customer Name:**
+   - Request:
+     ```json
+     {
+       "date": "2023-01-01"
+     }
+     ```
+   - Response:
+     ```json
+     {
+       "customer_name": [
+         "This field may not be blank."
+       ]
+     }
+     ```
+
+4. **Remove "Date" or "Customer Name" Key:**
+   - Request:
+     ```json
+     {
+       "customer_name": "John Doe"
+     }
+     ```
+   - Response:
+     ```json
+     {
+       "date": [
+         "This field is required."
+       ]
+     }
+     ```
+
+5. **Optional "Details" Field (Remove It):**
+   - Request:
+     ```json
+     {
+       "date": "2023-12-20",
+       "customer_name": "John Doe"
+     }
+     ```
+   - Response:
+     ```json
+     {
+       "id": 27,
+       "date": "2023-12-20",
+       "customer_name": "John Doe",
+       "details": []
+     }
+     ```
+
+6. **Keep "Details" Key, No Data:**
+   - Request:
+     ```json
+     {
+       "date": "2023-12-20",
+       "customer_name": "John Doe",
+       "details": []
+     }
+     ```
+   - Response:
+     ```json
+     {
+       "id": 28,
+       "date": "2023-12-20",
+       "customer_name": "John Doe",
+       "details": []
+     }
+     ```
+
+7. **Missing Key in "Details" (e.g., "Price"):**
+   - Request:
+     ```json
+     {
+       "date": "2023-12-20",
+       "customer_name": "John Doe",
+       "details": [
+         {
+           "quantity": 2,
+           "unit_price": 10.0
+         }
+       ]
+     }
+     ```
+   - Response:
+     ```json
+     {
+       "details": [
+         {
+           "price": [
+             "This field is required."
+           ]
+         }
+       ]
+     }
+     ```
+
+8. **Invalid Unit Price in "Details":**
+   - Request:
+     ```json
+     {
+       "date": "2023-12-20",
+       "customer_name": "John Doe",
+       "details": [
+         {
+           "quantity": 2,
+           "unit_price": "11a.40",
+           "price": 22.0
+         }
+       ]
+     }
+     ```
+   - Response:
+     ```json
+     {
+       "details": [
+         {
+           "unit_price": [
+             "A valid number is required."
+           ]
+         }
+       ]
+     }
+     ```
+
+
 ## API Examples
 
 - **Create Invoice**
